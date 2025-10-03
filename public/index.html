@@ -125,7 +125,7 @@
         }
         
         const generateCombinedCsv = (allInvoicesData) => {
-            const headers = [ 'sl_no', 'description', 'hsn_no', 'qty', 'rate', 'amount', 'invoice_no', 'invoice_date', 'due_date', 'vendor_name', 'vendor_address', 'vendor_gstin', 'vendor_phone', 'customer_name', 'customer_address', 'customer_phone', 'customer_gstin', 'total', 'discount', 'service_charge', 'taxable_amount', 'sgst', 'cgst', 'payable_amount' ];
+            const headers = [ 'sl_no', 'description', 'hsn_no', 'qty', 'rate', 'amount', 'invoice_no', 'invoice_date', 'due_date', 'vendor_name', 'vendor_address', 'vendor_gstin', 'vendor_phone', 'customer_name', 'customer_address', 'customer_phone', 'customer_gstin', 'total', 'discount', 'taxable_amount', 'sgst', 'cgst', 'payable_amount' ];
             const escapeCsvCell = (cell) => { const cellStr = String(cell === null || cell === undefined ? '' : cell); if (cellStr.includes(',')) return `"${cellStr.replace(/"/g, '""')}"`; return cellStr; };
             const allRows = [];
             for (const jsonData of allInvoicesData) {
