@@ -130,7 +130,7 @@
             const allRows = [];
             for (const jsonData of allInvoicesData) {
                 const { invoice_details, vendor_details, customer_details, line_items, summary } = jsonData;
-                const mainDetails = [ invoice_details?.invoice_no, invoice_details?.invoice_date, invoice_details?.due_date, vendor_details?.name, vendor_details?.address, vendor_details?.gstin, vendor_details?.phone, customer_details?.name, customer_details?.address, customer_details?.phone, customer_details?.gstin, summary?.total, summary?.discount, summary?.service_charge, summary?.taxable_amount, summary?.sgst, summary?.cgst, summary?.payable_amount ].map(escapeCsvCell);
+                const mainDetails = [ invoice_details?.invoice_no, invoice_details?.invoice_date, invoice_details?.due_date, vendor_details?.name, vendor_details?.address, vendor_details?.gstin, vendor_details?.phone, customer_details?.name, customer_details?.address, customer_details?.phone, customer_details?.gstin, summary?.total, summary?.discount, summary?.taxable_amount, summary?.sgst, summary?.cgst, summary?.payable_amount ].map(escapeCsvCell);
                 if (line_items && Array.isArray(line_items)) {
                     for (const item of line_items) {
                         const itemDetails = [ item.sl_no, item.description, item.hsn_no, item.qty, item.rate, item.amount ].map(escapeCsvCell);
